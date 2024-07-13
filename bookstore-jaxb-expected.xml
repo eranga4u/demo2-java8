@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:bookstore xmlns:ns2="org.demo.eranga">
+    <bookList>
+        <book>
+            <authors>
+                <authorName>Neil Strauss</authorName>
+                <authorId>A0060554736</authorId>
+            </authors>
+            <name>Dhamma Gaweshi</name>
+            <publisher>Pearson</publisher>
+        </book>
+
+    </bookList>
+    <location>Colombo Airport</location>
+    <name>Colombo Bookstore</name>
+</ns2:bookstore>

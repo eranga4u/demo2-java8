@@ -1,54 +1,49 @@
 package org.demo.eranga;
 
 
-
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "book")
-// If you want you can define the order in which the fields are written
-// Optional
-@XmlType(propOrder = { "author", "name", "publisher", "isbn" })
 public class Book {
-
-    private String name;
-    private String author;
+    @XmlElement(name="authors/authorName")
+    private String authorName;
+    @XmlElement(name="authors/authorId")
+    private String authorId;
     private String publisher;
     private String isbn;
+    private String name;
 
-    // If you like the variable name, e.g. "name", you can easily change this
-    // name for your XML-Output:
-    @XmlElement(name = "title")
-    public String getName() {
-        return name;
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getPublisher() {
-        return publisher;
+    public void setAuthorId(String authorId) {
+        this.authorId = authorId;
     }
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
 
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
     public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public String getName() {
+        return name;
     }
 }

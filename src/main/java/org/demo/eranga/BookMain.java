@@ -14,32 +14,11 @@ import javax.xml.bind.Unmarshaller;
 
 public class BookMain {
 
-    private static final String BOOKSTORE_XML = "./bookstore-jaxb.xml";
+    private static final String BOOKSTORE_XML = "./bookstore-jaxb-actual.xml";
 
     public static void main(String[] args) throws JAXBException, IOException {
 
-        ArrayList<Book> bookList = new ArrayList<>();
-
-        // create books
-        Book book1 = new Book();
-        book1.setIsbn("978-0060554736");
-        book1.setName("The Game");
-        book1.setAuthor("Neil Strauss");
-        book1.setPublisher("Harpercollins");
-        bookList.add(book1);
-
-        Book book2 = new Book();
-        book2.setIsbn("978-3832180577");
-        book2.setName("Feuchtgebiete");
-        book2.setAuthor("Charlotte Roche");
-        book2.setPublisher("Dumont Buchverlag");
-        bookList.add(book2);
-
-        // create bookstore, assigning book
-        Bookstore bookstore = new Bookstore();
-        bookstore.setName("Fraport Bookstore");
-        bookstore.setLocation("Frankfurt Airport");
-        bookstore.setBookList(bookList);
+        Bookstore bookstore = getBookstore();
 
         // create JAXB context and instantiate marshaller
         JAXBContext context = JAXBContext.newInstance(Bookstore.class);
@@ -53,15 +32,34 @@ public class BookMain {
         m.marshal(bookstore, new File(BOOKSTORE_XML));
 
         // get variables from our xml file, created before
-        System.out.println();
+
         System.out.println("Output from our XML File: ");
         Unmarshaller um = context.createUnmarshaller();
         Bookstore bookstore2 = (Bookstore) um.unmarshal(new FileReader(
             BOOKSTORE_XML));
         List<Book> list = bookstore2.getBooksList();
         for (Book book : list) {
-            System.out.println("Book: " + book.getName() + " from "
-                + book.getAuthor());
+            System.out.println("book.toString() = " + book.toString());
         }
+    }
+
+    private static Bookstore getBookstore() {
+        ArrayList<Book> bookList = new ArrayList<>();
+
+        // create books
+        Book book = new Book();
+        book.setIsbn("978-0060554736");
+        book.setAuthorName("Neil Strauss");
+        book.setAuthorId("A0060554736");
+        book.setPublisher("Pearson");
+        book.setName("Dhamma Gaweshi");
+        bookList.add(book);
+
+        // create bookstore, assigning book
+        Bookstore bookstore = new Bookstore();
+        bookstore.setName("Colombo Bookstore");
+        bookstore.setLocation("Colombo Airport");
+        bookstore.setBookList(bookList);
+        return bookstore;
     }
 }
