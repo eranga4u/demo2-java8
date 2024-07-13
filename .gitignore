@@ -43,4 +43,4 @@ bin/
 
 ### inteli ###
 /.idea
-/.idea/**
+/.idea/workspace.xml
