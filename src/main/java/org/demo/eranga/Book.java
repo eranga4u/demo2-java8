@@ -6,21 +6,21 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "book")
 public class Book {
-    @XmlElement(name="authors/authorName")
-    private String authorName;
-    @XmlElement(name="authors/authorId")
-    private String authorId;
+    @XmlElement(name="authors/authorFirstName")
+    private String authorFirstName;
+    @XmlElement(name="authors/authorLastName")
+    private String authorLastName;
     private String publisher;
     private String isbn;
     private String name;
 
 
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
+    public void setAuthorFirstName(String authorFirstName) {
+        this.authorFirstName = authorFirstName;
     }
 
-    public void setAuthorId(String authorId) {
-        this.authorId = authorId;
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
     }
 
     public void setPublisher(String publisher) {

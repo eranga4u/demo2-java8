@@ -49,8 +49,8 @@ public class BookMain {
         // create books
         Book book = new Book();
         book.setIsbn("978-0060554736");
-        book.setAuthorName("Neil Strauss");
-        book.setAuthorId("A0060554736");
+        book.setAuthorFirstName("Neil");
+        book.setAuthorLastName("Strauss");
         book.setPublisher("Pearson");
         book.setName("Dhamma Gaweshi");
         bookList.add(book);

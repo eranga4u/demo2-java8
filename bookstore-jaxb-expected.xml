@@ -3,8 +3,8 @@
     <bookList>
         <book>
             <authors>
-                <authorName>Neil Strauss</authorName>
-                <authorId>A0060554736</authorId>
+                <authorFirstName>Neil</authorFirstName>
+                <authorLastName>Strauss</authorLastName>
             </authors>
             <name>Dhamma Gaweshi</name>
             <publisher>Pearson</publisher>
